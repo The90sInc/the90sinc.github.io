@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Home · Emmanuel Okunlola</title>
+    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <meta name="theme-color" content="#0e1210">
+
+    <!-- Inline, blocking: set the theme before first paint so there's no flash -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('portfolio-theme');
+          var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'mechanical' : 'normal');
+
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.setAttribute('data-bs-theme', theme === 'mechanical' ? 'dark' : 'light');
+        } catch (err) {
+          document.documentElement.dataset.theme = 'normal';
+          document.documentElement.setAttribute('data-bs-theme', 'light');
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/site.css">
+    
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="page-header py-3 px-4 d-flex align-items-center justify-content-between">
+        <div class="brand">
+          <a href="index.html" class="text-decoration-none">
+            <h1 class="h4 mb-0">Emmanuel Okunlola</h1>
+          </a>
+        </div>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="projects.html" class="nav-pill">Projects</a>
+          <a href="courses.html" class="nav-pill">Course</a>
+          <a href="cv.html" class="nav-pill">Curriculum Vitae</a>
+          <a href="cv.html#certification" class="nav-pill">Certifications</a>
+    
+        </nav>
+        <button id="theme-toggle" class="switch" type="button" aria-pressed="false" aria-label="Toggle mechanical theme">
+          <span class="switch-label">Normal</span>
+          <span class="switch-track"><span class="switch-thumb"></span></span>
+        </button>
+      </header>
+      <main class="container-xl py-4">
+        <div class="row gx-4">
+          <aside class="col-md-4 mb-4 sidebar-col">
+            <div class="sidebar-card p-4 rounded-4 shadow-sm">
+              <img src="images/profile_picture.jpeg" alt="Profile photo" class="profile-avatar mb-3">
+              <h2 class="h5 mb-2">Emmanuel Oladele Okunlola</h2>
+              <p class="text-muted mb-3">Course Instructor and Lead Researcher at Robotics and Artificial Intelligence Nigeria (R.A.I.N)</p>
+              <div class="sidebar-links mb-3">
+                <a href="about.html" class="sidebar-link">About Me</a>
+                <a href="mailto:niyotokunlola@gmail.com" class="sidebar-link">Email</a>
+                <a href="tel:+2348109002739" class="sidebar-link">Phone</a>
+                <a href="cv.html" class="sidebar-link">CV</a>
+                <a href="https://github.com/the90sInc/" target="_blank" class="sidebar-link">GitHub</a>
+                <a href="https://www.linkedin.com/in/emmanuelokunlola/" target="_blank" class="sidebar-link">LinkedIn</a>
+              </div>
+            </div>
+          </aside>
+          <section class="col-md-8">
+
+<div class="hero-section rounded-4 shadow-sm p-5 mb-5">
+  <div class="d-flex flex-column flex-md-row align-items-start gap-4">
+    <div class="hero-text flex-grow-1">
+      <!-- <p class="eyebrow mb-2">product specialist &amp; data scientist</p> -->
+      <h2 class="display-6 fw-bold mb-3">Hello! I'm Emmanuel.</h2>
+      <p class="lead text-muted mb-4">I design and deploy AI/ML solutions — from credit-risk models to automated support workflows — and I come at it from an unusual angle: a background in automotive and mechanical engineering. Curious about the road that got me here? Head over to my <a href="about.html" class="text-decoration-underline">About Me</a> page.</p>
+      <div class="mt-4 p-3 rounded-4 border" style="background: var(--surface-2); border-color: var(--border);">
+        <h7 class="h6 mb-3" style="font-family: var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-warm-strong);">Research Interests:</h7>
+        <div class="d-flex flex-wrap gap-2">
+          <span class="badge badge-pill nature">Reinforcement Learning</span>
+          <span class="badge badge-pill sunset">Robotics</span>
+          <span class="badge badge-pill ocean">Data Science</span>
+          <span class="badge badge-pill lavender">Unmanned Ground Vehicle</span>
+          <span class="badge badge-pill dark">Embedded Systems</span>
+          <span class="badge badge-pill aurora">Control Theory</span>
+          <span class="badge badge-pill metal">Autonomous Systems</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-block mb-5">
+  <h3 class="section-title"><a href="cv.html#experience" class="cardbar-link">Experience Highlights</a></h3>
+  <div class="row gy-4">
+    <div class="col-md-6">
+      <article class="card bg-primary-subtle border-0 rounded-4 p-4 h-100">
+        <p class="text-muted mb-1">Jan 2026 – Present</p>
+        <h4 class="mb-2">Course Instructor &amp; Lead Researcher, RAIN</h4>
+        <p class="mb-0 text-muted">Teaching ROS2, path planning, digital twins, and embedded systems; mentoring student research in robotics and AI.</p>
+      </article>
+    </div>
+    <div class="col-md-6">
+      <article class="card bg-primary-subtle border-0 rounded-4 p-4 h-100">
+        <p class="text-muted mb-1">Oct 2024 – Dec 2025</p>
+        <h4 class="mb-2">Product Specialist, Lendsqr</h4>
+        <p class="mb-0 text-muted">Built a credit model to estimate repayment probability and automated ticketing workflows with n8n, cutting resolution time from ~2 hours to ~45 minutes.</p>
+      </article>
+    </div>
+  </div>
+</div>
+
+<div class="content-block mb-5">
+  <h3 class="section-title"><a href="cv.html#certification" class="cardbar-link">Certifications</a></h3>
+  <div class="row gy-4">
+    <div class="col-md-6">
+      <article class="card bg-secondary-subtle border-0 rounded-4 p-4 h-100">
+        <h5 class="mb-2">Introduction to Generative AI, AWS</h5>
+        <p class="text-muted mb-0">2025</p>
+      </article>
+    </div>
+    <div class="col-md-6">
+      <article class="card bg-secondary-subtle border-0 rounded-4 p-4 h-100">
+        <h5 class="mb-2">Meta AI Agents and Agentic AI Systems Development</h5>
+        <p class="text-muted mb-0">2025</p>
+      </article>
+    </div>
+  </div>
+</div>
+
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="js/theme.js"></script>
+  </body>
+</html>

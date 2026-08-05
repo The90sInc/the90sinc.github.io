@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Courses · Emmanuel Okunlola</title>
+    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <meta name="theme-color" content="#0e1210">
+
+    <!-- Inline, blocking: set the theme before first paint so there's no flash -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('portfolio-theme');
+          var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'mechanical' : 'normal');
+
+          document.documentElement.dataset.theme = theme;
+          document.documentElement.setAttribute('data-bs-theme', theme === 'mechanical' ? 'dark' : 'light');
+        } catch (err) {
+          document.documentElement.dataset.theme = 'normal';
+          document.documentElement.setAttribute('data-bs-theme', 'light');
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/site.css">
+    
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="page-header py-3 px-4 d-flex align-items-center justify-content-between">
+        <div class="brand">
+          <a href="index.html" class="text-decoration-none">
+            <h1 class="h4 mb-0">Emmanuel Okunlola</h1>
+          </a>
+        </div>
+        <nav class="site-nav" aria-label="Primary">
+          <a href="projects.html" class="nav-pill">Projects</a>
+          <a href="courses.html" class="nav-pill">Course</a>
+          <a href="cv.html" class="nav-pill">Curriculum Vitae</a>
+          <a href="cv.html#certification" class="nav-pill">Certifications</a>
+    
+        </nav>
+        <button id="theme-toggle" class="switch" type="button" aria-pressed="false" aria-label="Toggle mechanical theme">
+          <span class="switch-label">Normal</span>
+          <span class="switch-track"><span class="switch-thumb"></span></span>
+        </button>
+      </header>
+      <main class="container-xl py-4">
+        <div class="row gx-4">
+          <aside class="col-md-4 mb-4 sidebar-col">
+            <div class="sidebar-card p-4 rounded-4 shadow-sm">
+              <img src="images/profile_picture.jpeg" alt="Profile photo" class="profile-avatar mb-3">
+              <h2 class="h5 mb-2">Emmanuel Oladele Okunlola</h2>
+              <p class="text-muted mb-3">Course Instructor and Lead Researcher at Robotics and Artificial Intelligence Nigeria (R.A.I.N)</p>
+              <div class="sidebar-links mb-3">
+                <a href="about.html" class="sidebar-link">About Me</a>
+                <a href="mailto:niyotokunlola@gmail.com" class="sidebar-link">Email</a>
+                <a href="tel:+2348109002739" class="sidebar-link">Phone</a>
+                <a href="cv.html" class="sidebar-link">CV</a>
+                <a href="https://github.com/the90sInc/" target="_blank" class="sidebar-link">GitHub</a>
+                <a href="https://www.linkedin.com/in/emmanuelokunlola/" target="_blank" class="sidebar-link">LinkedIn</a>
+              </div>
+            </div>
+          </aside>
+          <section class="col-md-8">
+
+<div class="content-block rounded-4 shadow-sm p-5 mb-4">
+  <h2 class="section-title mb-3">Courses Taken</h2>
+  <p class="text-muted mb-0">This is breakdown of all courseworks from my B.Tech.Ed at Ekiti State University, my certification with Robotics and Artificial Intelligence Nigeria (R.A.I.N), and also from open sourced courses organized around my current research interests, which includes but is not limited to Robotics, Autonomous Systems and Reinforcement Learn.</p>
+</div>
+
+<div class="content-block rounded-4 shadow-sm p-5 mb-4">
+  <h3 class="h5 mb-3">Robotics</h3>
+  <ul class="list-unstyled mb-0">
+    <li class="mb-2">
+      <a href="https://drive.google.com/file/d/1UEtzBidopb_lL7WB7oInvOsOQyPfA4e6/view?usp=drive_link" target="_blank" class="sidebar-link">TED 403 — Introduction to Robotics &amp; Mechatronics</a>
+      <!-- <span class="text-muted d-block small">Ekiti State University</span> -->
+    </li>
+    <li class="mb-2">
+      <a href="https://drive.google.com/file/d/1CCuUGv7idPJvRpgZDBrpTWiQ8XdiAcMQ/view?usp=drive_link" target="_blank" class="sidebar-link">RDA 212 — AI for Humanoid Robots</a>
+      <!-- <span class="text-muted d-block small">RAIN</span> -->
+    </li>
+    <li class="mb-2">
+      <a href="https://drive.google.com/file/d/1CCuUGv7idPJvRpgZDBrpTWiQ8XdiAcMQ/view?usp=drive_link" target="_blank" class="sidebar-link">RDA 111 — Product Design and Development</a>
+      <!-- <span class="text-muted d-block small">RAIN</span> -->
+    </li>
+    <li class="mb-2">
+      <a href="https://drive.google.com/file/d/1UEtzBidopb_lL7WB7oInvOsOQyPfA4e6/view?usp=drive_link" target="_blank" class="sidebar-link">MET 332 — Machine Design</a>
+      <!-- <span class="text-muted d-block small">Ekiti State University</span> -->
+    </li>
+    <li class="mb-0">
+      <a href="https://www.youtube.com/playlist?list=PLggLP4f-rq02vX0OQQ5vrCxbJrzamYDfx" target="_blank" class="sidebar-link">Modern Robotics: Mechanics, Planning, and Control</a>
+      <!-- <span class="text-muted d-block small">Ekiti State University</span> -->
+    </li>
+  </ul>
+</div>
+
+<div class="content-block rounded-4 shadow-sm p-5 mb-4">
+  <h3 class="h5 mb-3">Autonomous Systems</h3>
+  <ul class="list-unstyled mb-0">
+    <li class="mb-2">
+      <a href="https://drive.google.com/file/d/1CCuUGv7idPJvRpgZDBrpTWiQ8XdiAcMQ/view?usp=drive_link" target="_blank" class="sidebar-link">RDA 211 — Advanced Control for Mobile Robots</a>
+      <!-- <span class="text-muted d-block small">RAIN</span> -->
+    </li>
+    <li class="mb-2">
+      <a href="https://drive.google.com/file/d/1CCuUGv7idPJvRpgZDBrpTWiQ8XdiAcMQ/view?usp=drive_link" target="_blank" class="sidebar-link">RDA 112 — Practical Electronics and Embedded Systems</a>
+      <!-- <span class="text-muted d-block small">RAIN</span> -->
+    </li>
+    <li class="mb-0">
+      <a href="https://drive.google.com/file/d/1UEtzBidopb_lL7WB7oInvOsOQyPfA4e6/view?usp=drive_link" target="_blank" class="sidebar-link">ENG 222 — Basic Electrical Engineering II</a>
+      <!-- <span class="text-muted d-block small">Ekiti State University</span> -->
+    </li>
+  </ul>
+</div>
+
+<div class="content-block rounded-4 shadow-sm p-5 mb-4">
+  <h3 class="h5 mb-3">SLAM</h3>
+  <ul class="list-unstyled mb-0">
+    <li class="mb-2">
+      <a href="https://drive.google.com/file/d/1UEtzBidopb_lL7WB7oInvOsOQyPfA4e6/view?usp=drive_link" target="_blank" class="sidebar-link">CVE 332 — Engineering Surveying</a>
+      <!-- <span class="text-muted d-block small">Ekiti State University</span> -->
+    </li>
+    <li class="mb-2">
+      <a href="https://drive.google.com/file/d/1UEtzBidopb_lL7WB7oInvOsOQyPfA4e6/view?usp=drive_link" target="_blank" class="sidebar-link">MAT 102 — Vectorial Mechanics</a>
+      <!-- <span class="text-muted d-block small">Ekiti State University</span> -->
+    </li>
+    <li class="mb-0">
+      <a href="https://drive.google.com/file/d/1UEtzBidopb_lL7WB7oInvOsOQyPfA4e6/view?usp=drive_link" target="_blank" class="sidebar-link">MAT 211 — Computer Programming I</a>
+      <!-- <span class="text-muted d-block small">Ekiti State University</span> -->
+    </li>
+  </ul>
+</div>
+
+<div class="content-block rounded-4 shadow-sm p-5 mb-4">
+  <h3 class="h5 mb-3">Artificial Intelligence &amp; Machine Learning</h3>
+  <ul class="list-unstyled mb-0">
+    <li class="mb-2">
+      <a href="https://drive.google.com/file/d/1CCuUGv7idPJvRpgZDBrpTWiQ8XdiAcMQ/view?usp=drive_link" target="_blank" class="sidebar-link">AIML 101 — Web Development for Model Deployment</a>
+      <!-- <span class="text-muted d-block small">RAIN</span> -->
+    </li>
+    <li class="mb-2">
+      <a href="https://drive.google.com/file/d/1CCuUGv7idPJvRpgZDBrpTWiQ8XdiAcMQ/view?usp=drive_link" target="_blank" class="sidebar-link">RDA 212 — AI for Humanoid Robots</a>
+      <!-- <span class="text-muted d-block small">RAIN</span> -->
+    </li>
+    <li class="mb-2">
+      <a href="https://drive.google.com/file/d/1UEtzBidopb_lL7WB7oInvOsOQyPfA4e6/view?usp=drive_link" target="_blank" class="sidebar-link">MAT 211 — Computer Programming I</a>
+      <!-- <span class="text-muted d-block small">Ekiti State University</span> -->
+    </li>
+    <li class="mb-0">
+      <a href="" target="_blank" class="sidebar-link">Supervised Learning with scikit-learn (2025)</a>
+      <!-- <span class="text-muted d-block small">Ekiti State University</span> -->
+    </li>
+  </ul>
+</div>
+
+<div class="content-block rounded-4 shadow-sm p-5 mb-4">
+  <h3 class="h5 mb-3">Reinforcement Learning</h3>
+  <ul class="list-unstyled mb-0">
+    <li class="mb-2">
+      <a href="https://drive.google.com/file/d/1CCuUGv7idPJvRpgZDBrpTWiQ8XdiAcMQ/view?usp=drive_link" target="_blank" class="sidebar-link">RDA 212 — AI for Humanoid Robots</a>
+      <!-- <span class="text-muted d-block small">RAIN</span> -->
+    </li>
+    <li class="mb-0">
+      <a href="https://drive.google.com/file/d/1UEtzBidopb_lL7WB7oInvOsOQyPfA4e6/view?usp=drive_link" target="_blank" class="sidebar-link">MAT 101 — Algebra &amp; Trigonometry</a>
+      <!-- <span class="text-muted d-block small">Ekiti State University</span> -->
+    </li>
+  </ul>
+</div>
+
+<div class="content-block rounded-4 shadow-sm p-5">
+  <h3 class="h5 mb-3">Control Theory</h3>
+  <ul class="list-unstyled mb-0">
+    <li class="mb-2">
+      <a href="https://drive.google.com/file/d/1CCuUGv7idPJvRpgZDBrpTWiQ8XdiAcMQ/view?usp=drive_link" target="_blank" class="sidebar-link">RDA 113 — Control Theory and IoT</a>
+      <!-- <span class="text-muted d-block small">RAIN</span> -->
+    </li>
+    <li class="mb-2">
+      <a href="https://drive.google.com/file/d/1CCuUGv7idPJvRpgZDBrpTWiQ8XdiAcMQ/view?usp=drive_link" target="_blank" class="sidebar-link">RDA 211 — Advanced Control for Mobile Robots</a>
+      <!-- <span class="text-muted d-block small">RAIN</span> -->
+    </li>
+    <li class="mb-2">
+      <a href="https://drive.google.com/file/d/1UEtzBidopb_lL7WB7oInvOsOQyPfA4e6/view?usp=drive_link" target="_blank" class="sidebar-link">ENG 235 — Engineering and Thermodynamics</a>
+      <!-- <span class="text-muted d-block small">Ekiti State University</span> -->
+    </li>
+    <li class="mb-0">
+      <a href="https://drive.google.com/file/d/1UEtzBidopb_lL7WB7oInvOsOQyPfA4e6/view?usp=drive_link" target="_blank" class="sidebar-link">MET 401 — Air Conditioning and Refrigeration System</a>
+      <!-- <span class="text-muted d-block small">Ekiti State University</span> -->
+    </li>
+  </ul>
+</div>
+
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="js/theme.js"></script>
+  </body>
+</html>

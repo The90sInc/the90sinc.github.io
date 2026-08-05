@@ -1,0 +1,646 @@
+/* ==========================================================================
+   Portfolio design system — "field notebook" theme
+   Two named surfaces (paper / graphite), one technical blue accent,
+   one copper accent for highlights and tags.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+:root {
+  color-scheme: light;
+
+  /* -- surfaces -- */
+  --bg: #f2efe6;
+  --surface: #ffffff;
+  --surface-2: #f7f3ea;
+  --panel: rgba(20, 24, 20, 0.08);
+  --border: rgba(15, 20, 15, 0.16);
+
+  /* -- text -- */
+  --text: #11140f;
+  --text-muted: #4f564b;
+
+  /* -- accents -- */
+  --accent: #1f5fae;        /* blueprint blue */
+  --accent-strong: #123c73;
+  --accent-warm: #b4622a;   /* copper */
+  --accent-warm-strong: #8a4a1e;
+
+  /* -- fonts -- */
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Source Serif 4', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --radius: 18px;
+  --shadow: 0 20px 60px rgba(20, 20, 15, 0.10);
+}
+
+/* "Mechanical" theme — a blueprint / technical-drawing surface: deep
+   schematic navy, a faint drafting grid, cyan linework and copper rivets
+   in place of the paper/graphite palette. */
+[data-theme="mechanical"] {
+  color-scheme: dark;
+  --bg: #0a1522;
+  --surface: #0f2036;
+  --surface-2: #16304a;
+  --panel: rgba(150, 205, 255, 0.07);
+  --border: rgba(150, 205, 255, 0.12);
+
+  --text: #eaf3fc;
+  --text-muted: #9db2ca;
+
+  --accent: #5fb1ff;
+  --accent-strong: #9cd2ff;
+  --accent-warm: #d68a4c;
+  --accent-warm-strong: #f2ab6d;
+
+  --grid-line: rgba(150, 205, 255, 0.07);
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="mechanical"] body {
+  background-image:
+    repeating-linear-gradient(0deg, var(--grid-line) 0 1px, transparent 1px 32px),
+    repeating-linear-gradient(90deg, var(--grid-line) 0 1px, transparent 1px 32px),
+    radial-gradient(circle at 8% 0%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 42%);
+  background-color: var(--bg);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* keep anchored sections clear of the sticky header when jumped to via nav */
+#experience,
+#certifications {
+  scroll-margin-top: 6.5rem;
+}
+#certification {
+  scroll-margin-top: 6.5rem;
+}
+
+body {
+  background:
+    radial-gradient(circle at 8% 0%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 40%),
+    var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+.sidebar-card,
+.content-block,
+.project-card,
+.hero-section,
+.page-header {
+  color: var(--text);
+}
+
+p,
+li,
+.sidebar-link,
+.cardbar-link,
+.badge.badge-pill,
+.section-title,
+.brand h1,
+.brand .eyebrow-tag {
+  color: var(--text);
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+a { color: var(--accent); }
+a:hover { color: var(--accent-strong); }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.page-shell { min-height: 100vh; }
+
+/* ---------------------------------------------------------------------- */
+/* Header                                                                  */
+/* ---------------------------------------------------------------------- */
+
+.page-header {
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.brand h1 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text) !important;
+}
+
+.brand .eyebrow-tag {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.sidebar-card,
+.content-block,
+.project-card,
+.hero-section,
+.card {
+  background: var(--surface);
+  border: 1px solid transparent;
+  box-shadow: var(--shadow), inset 0 0 0 1px var(--border);
+  color: var(--text);
+}
+
+.sidebar-card,
+.content-block,
+.hero-section {
+  position: relative;
+  border-radius: calc(var(--radius) + 4px);
+}
+
+.brand .eyebrow-tag {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Primary nav                                                            */
+/* ---------------------------------------------------------------------- */
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+}
+
+.nav-pill {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-pill:hover,
+.nav-pill:focus-visible {
+  color: var(--text);
+  background: var(--panel);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Sidebar — sticky so it stays fully in view while the page scrolls      */
+/* ---------------------------------------------------------------------- */
+
+.sidebar-col {
+  position: sticky;
+  top: 6rem;
+  align-self: flex-start;
+  max-height: calc(100vh - 7.5rem);
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+@media (max-width: 767px) {
+  .sidebar-col {
+    position: static;
+    max-height: none;
+    overflow-y: visible;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Theme switch                                                           */
+/* ---------------------------------------------------------------------- */
+
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.6rem 1.1rem;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text);
+  min-width: 120px;
+  width: auto;
+  justify-content: space-between;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+  user-select: none;
+  touch-action: manipulation;
+}
+
+.switch:hover {
+  background: var(--surface-2);
+}
+
+.switch:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.switch-track,
+.switch-thumb {
+  pointer-events: none;
+}
+
+.switch:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.switch-track {
+  width: 48px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  position: relative;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.switch-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent-warm);
+  transition: transform 0.22s ease, background-color 0.22s ease;
+}
+
+.switch[aria-pressed="true"] .switch-track {
+  background: color-mix(in srgb, var(--accent) 30%, var(--surface-2));
+  border-color: var(--accent);
+}
+
+.switch[aria-pressed="true"] .switch-thumb {
+  transform: translateX(22px);
+  background: var(--accent);
+}
+
+.switch-label {
+  min-width: 40px;
+  text-align: left;
+  color: var(--text);
+}
+
+.switch:hover { color: var(--text); }
+
+/* ---------------------------------------------------------------------- */
+/* Cards / surfaces                                                       */
+/* ---------------------------------------------------------------------- */
+
+.sidebar-card,
+.content-block{padding: 1rem;}
+.project-card,
+.hero-section,
+.card {
+  background: var(--surface);
+  border: 1px solid transparent;
+  box-shadow: var(--shadow), inset 0 0 0 1px var(--border);
+}
+
+.sidebar-card,
+.content-block,
+.hero-section {
+  position: relative;
+  border-radius: calc(var(--radius) + 4px);
+}
+
+/* Corner drafting-marks are a "mechanical" theme signature only — in the
+   normal theme, edges stay soft and unbroken with no hard demarcation. */
+[data-theme="mechanical"] .sidebar-card::before,
+[data-theme="mechanical"] .hero-section::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 18px;
+  height: 18px;
+  border-top: 2px solid var(--accent-warm);
+  border-left: 2px solid var(--accent-warm);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+[data-theme="mechanical"] .sidebar-card::after,
+[data-theme="mechanical"] .hero-section::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 18px;
+  height: 18px;
+  border-bottom: 2px solid var(--accent-warm);
+  border-right: 2px solid var(--accent-warm);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.profile-avatar,
+.hero-image {
+  width: 100%;
+  max-width: 220px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-warm-strong);
+}
+
+.section-title {
+  font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+  margin-bottom: 1.4rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px dashed var(--border);
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  max-width: 100%;
+  
+}
+
+
+/* ---------------------------------------------------------------------- */
+/* Badges / tags — styled like instrument readouts                        */
+/* ---------------------------------------------------------------------- */
+
+.badge.badge-pill {
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: capitalize;
+  padding: 0.45em 0.9em 0.45em 0.7em;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.badge.badge-pill::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex: none;
+}
+
+.badge.nature {
+  color: #2f8f5b;
+  background: linear-gradient(135deg, rgba(47, 143, 91, 0.16), rgba(47, 143, 91, 0.06));
+  border-color: rgba(47, 143, 91, 0.25);
+}
+
+.badge.sunset {
+  color: var(--accent-warm-strong);
+  background: linear-gradient(135deg, rgba(180, 98, 42, 0.16), rgba(180, 98, 42, 0.06));
+  border-color: rgba(180, 98, 42, 0.25);
+}
+
+.badge.ocean {
+  color: var(--accent);
+  background: linear-gradient(135deg, rgba(31, 95, 174, 0.16), rgba(31, 95, 174, 0.06));
+  border-color: rgba(31, 95, 174, 0.25);
+}
+
+.badge.lavender {
+  color: #7a5fd0;
+  background: linear-gradient(135deg, rgba(122, 95, 208, 0.16), rgba(122, 95, 208, 0.06));
+  border-color: rgba(122, 95, 208, 0.25);
+}
+
+.badge.dark {
+  color: var(--text-muted);
+  background: linear-gradient(135deg, rgba(79, 86, 75, 0.16), rgba(79, 86, 75, 0.06));
+  border-color: rgba(79, 86, 75, 0.2);
+}
+
+.badge.metal {
+  color: #6b7280;
+  background: linear-gradient(135deg, rgba(107, 114, 128, 0.16), rgba(107, 114, 128, 0.06));
+  border-color: rgba(107, 114, 128, 0.22);
+}
+
+.badge.circuit {
+  color: #0f766e;
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.16), rgba(15, 118, 110, 0.06));
+  border-color: rgba(15, 118, 110, 0.25);
+}
+
+.badge.aurora {
+  color: #c2410c;
+  background: linear-gradient(135deg, rgba(194, 65, 12, 0.16), rgba(194, 65, 12, 0.06));
+  border-color: rgba(194, 65, 12, 0.24);
+}
+
+/* Bootstrap "subtle" bg utilities used on the home page — tie to tokens
+   instead of Bootstrap's fixed light-mode palette so they adapt in dark mode */
+.bg-primary-subtle {
+  background-color: color-mix(in srgb, var(--accent) 20%, var(--surface)) !important;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.bg-secondary-subtle {
+  background-color: color-mix(in srgb, var(--surface-2) 80%, var(--surface)) !important;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Sidebar links                                                          */
+/* ---------------------------------------------------------------------- */
+
+.sidebar-links {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.sidebar-link {
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  padding: 0.15rem 0;
+  border-bottom: 1px solid transparent;
+}
+
+.sidebar-link:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Cardbar links                                                          */
+/* ---------------------------------------------------------------------- */
+
+.cardbar-links {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.cardbar-link {
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: clamp(1.35rem, 2.2vw, 1.9rem);
+  padding: 0.15rem 0;
+  border-bottom: 1px solid transparent;
+}
+
+.cardbar-link:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------------------------------------------------------------------- */
+/* Buttons                                                                 */
+/* ---------------------------------------------------------------------- */
+
+.btn-outline-light {
+  color: var(--text);
+  border-color: var(--border);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+  padding: 0.5rem 1.1rem;
+}
+
+.btn-outline-light:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+/* ---------------------------------------------------------------------- */
+/* Responsive tuning                                                       */
+/* ---------------------------------------------------------------------- */
+
+@media (max-width: 767px) {
+  .page-header {
+    padding: 0.85rem 1rem;
+  }
+
+  .hero-section .d-flex.flex-md-row {
+    flex-direction: column-reverse;
+  }
+
+  .hero-image {
+    max-width: 140px;
+    margin: 0 auto 1rem;
+  }
+
+  .content-block,
+  .project-card,
+  .hero-section,
+  .sidebar-card {
+    padding: 1.75rem !important;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .site-nav {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand h1 { font-size: 1rem; }
+  .nav-pill {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.72rem;
+  }
+  .switch {
+    width: 100%;
+    min-width: 0;
+    max-width: 260px;
+    padding: 0.75rem 1rem;
+  }
+  .switch-label {
+    display: inline-block;
+    white-space: normal;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* gif images                                                      */
+/* ---------------------------------------------------------------------- */
+
+.project-media {
+  width: 70%;
+  max-width: 320px;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+}
+
+@media (max-width: 767px) {
+  .project-media {
+    max-width: 100%;
+  }
+}
